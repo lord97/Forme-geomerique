@@ -5,10 +5,19 @@ MDBoxLayout :
     MDScreen :
         MDLabel :
             id : my_label
-            text : "test"
+            text : "tracé géometrique sur des images"
             halign : "center"
         
-        MDFloatingActionButtonSpeedDial :
-            data : app.data
-            root_button_animation : True
+        #bouton qui liste les different menu
+        MDFloatingActionButtonSpeedDial : 
+            data : app.data  #le dictionnaire data defini les menu avec leur icone qui sont issue de material design icon 
+            root_button_anim: True
+            hint_animation: True
+            right_pad: False
+
+            #pour lancer des actions quand un bouton est clique
+            callback: app.callback
+
+
+
        

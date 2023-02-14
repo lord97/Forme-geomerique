@@ -12,19 +12,31 @@ from kivymd.uix.label import MDLabel
 # import numpy as np
 
 # class Amd(Widget):
-#     pass
+#     pass 
 
 class AmdApp(MDApp):
     
+    #dans ce dictionnaire la clé est nom du menu, et la valeur est le nom de l'icone material qui se trouve sur  https://pictogrammers.com/library/mdi/
     data = {
         "Rectangle" : "rectangle",
         "Droite" : "vector-line",
         "Cercle" : "circle",
         "Triangle" : "triangle"
         
-    }
+    } 
+    
+    def callback(self,instance) : 
+        if instance.icon == 'rectangle' :
+            self.root.ids.my_label.text = ' on doit dessiner un rectange'
+        elif instance.icon == 'vertor-line' :
+            self.root.ids.my_label.text = ' on doit dessiner une ligne'
+        elif instance.icon == 'circle' :
+            self.root.ids.my_label.text = ' on doit dessiner un cercle'
+        elif instance.icon == 'triangle' :
+            self.root.ids.my_label.text = ' on doit dessiner un triangle'
     
     def build(self):
+       
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette ="BlueGray"  
         return Builder.load_file('amd.kv')
