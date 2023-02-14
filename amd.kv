@@ -1,0 +1,14 @@
+#:kivy 1.0.9
+MDBoxLayout : 
+    orientation : 'vertical'
+
+    MDScreen :
+        MDLabel :
+            id : my_label
+            text : "test"
+            halign : "center"
+        
+        MDFloatingActionButtonSpeedDial :
+            data : app.data
+            root_button_animation : True
+       
