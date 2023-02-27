@@ -3,10 +3,20 @@ MDBoxLayout :
     orientation : 'vertical'
 
     MDScreen :
-        MDLabel :
-            id : my_label
-            text : "tracé géometrique sur des images"
-            halign : "center"
+        MDFloatLayout:
+            MDLabel:
+                id: layout
+                text: "Forme geometrique "
+                font_size: "24sp"
+                pos_hint: {'center_x': 0.5, 'center_y': 0.9}
+       
+        MDRoundFlatIconButton:
+            id: my_label
+            text: ""
+            icon: "file-image"
+            pos_hint: {'center_x': 0.5, 'center_y': -1}
+            on_release: app.file_manager_open()
+            
         
         #bouton qui liste les different menu
         MDFloatingActionButtonSpeedDial : 
@@ -17,6 +27,20 @@ MDBoxLayout :
 
             #pour lancer des actions quand un bouton est clique
             callback: app.callback
+        Image:
+            id: image
+            pos_hint: {'center_x': 0.5, 'center_y': -1}
+        
+        MDFloatingActionButton:
+            id: save_button
+            icon: "content-save"
+            pos_hint: {'center_x': 0.3, 'center_y': -1}
+            on_release: app.save_image()
+        MDFloatingActionButton:
+            id: close_button
+            icon: "close"
+            pos_hint: {'center_x': 0.7, 'center_y': -1}
+            on_release: app.stop()
 
 
 
